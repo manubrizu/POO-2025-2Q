@@ -1,0 +1,10 @@
+@startuml
+
+class Gear{
+    - int chainring
+    - double cog
+    + Gear (int chainring, double cog)
+    + double getRadio()
+}
+
+@enduml

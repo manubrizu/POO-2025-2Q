@@ -1,0 +1,8 @@
+@startuml
+class Point{
+    - double x
+    - double y
+    + Point(double x, double y)
+    + double distanceTo(Point p)
+}
+@enduml

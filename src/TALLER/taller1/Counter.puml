@@ -1,0 +1,19 @@
+@startuml
+
+class Counter{
+    - int count;
+    + Counter()
+    + void increment()
+    + void decrement()
+    + int getCount()
+
+}
+
+class MultipleCounter{
+    - int n
+    + MultipleCounter(int n)
+}
+
+Counter <|-- MultipleCounter
+
+@enduml
