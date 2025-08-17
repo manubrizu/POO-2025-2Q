@@ -1,0 +1,22 @@
+@startuml
+
+abstract class Card{
+    - double saldo
+    - Central central
+    + Card(Central central)
+    + void setSaldo(double newSaldo)
+    + double getSaldo()
+    + void viajar()
+    - boolean puedoViajar()
+}
+
+class Central{
+    - double priceTicket
+    + Central(double newPriceTicket)
+    + void setPriceTicket(double newPrice)
+    + double getPriceTicket()
+}
+
+Card *-- Central
+
+@enduml

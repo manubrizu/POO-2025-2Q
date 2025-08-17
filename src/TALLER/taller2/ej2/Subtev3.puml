@@ -1,0 +1,54 @@
+@startuml
+
+abstract class Card{
+    - Central c
+    + Card(Central c)
+    + {abstract} void viajar()
+    # {abstract} boolean puedoViajar()
+}
+
+class LimitedCard extends Card{
+    - int numberOfTravels
+    + LimitedCard(int numberOfTravels, Central c)
+    + void viajar()
+    # boolean puedoViajar()
+    + int getTravelsLeft()
+}
+
+abstract class RechargableCard extends Card{
+    - double saldo
+    + RechargableCard(Central c)
+    + {abstract} void setSaldo(double newSaldo)
+    + {abstract} double getSaldo()
+    + void viajar()
+    # boolean puedoViajar()
+}
+
+
+class RechargableCardNormal extends RechargableCard{
+    + RechargableCard(Central c)
+    + void setSaldo(double newSaldo)
+    + double getSaldo()
+    + void viajar()
+    # boolean puedoViajar()
+}
+
+class RechargableCardDiscount extends RechargableCard{
+    - double precioDiferido
+    + RechargableCard(Central c)
+    + void setSaldo(double newSaldo)
+    + double getSaldo()
+    + void viajar()
+    # boolean puedoViajar()
+}
+
+class Central{
+    - double priceTicket
+    + Central(double newPriceTicket)
+    + void setPriceTicket(double newPrice)
+    + double getPriceTicket()
+}
+
+Card *- Central
+
+@enduml
