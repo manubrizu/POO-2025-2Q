@@ -8,7 +8,7 @@ public class Amount {
     }
 
     public int getEntirePart(){
-        return Math.abs(this.value);
+        return (int) Math.abs(this.value);
     }
 
 }
