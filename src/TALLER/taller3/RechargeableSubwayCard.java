@@ -5,6 +5,7 @@ public class RechargeableSubwayCard extends SubwayCard{
 
     RechargeableSubwayCard(SubwayCentral sc){
         super(sc);
+        this.balance = 0;
     }
 
     public void recharge(double amount){
