@@ -5,7 +5,6 @@ public class RechargeableSubwayCard extends SubwayCard{
 
     RechargeableSubwayCard(SubwayCentral sc){
         super(sc);
-        this.balance = 0;
     }
 
     public void recharge(double amount){
@@ -22,12 +21,12 @@ public class RechargeableSubwayCard extends SubwayCard{
     }
 
     @Override
-    public void ride(){
+    public void ride() throws CannotRideException {
         if(this.canRide()){
             this.balance -= this.rideCost();
         }
         else{
-            System.out.println("Nao nao, wua wua");
+            throw new CannotRideException("Nao nao");
         }
     }
 }

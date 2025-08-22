@@ -13,5 +13,5 @@ public abstract class SubwayCard {
         return this.subwayCentral;
     }
 
-    public abstract void ride();
+    public abstract void ride() throws CannotRideException;
 }

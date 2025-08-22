@@ -10,16 +10,16 @@ public class FixedSubwayCard extends SubwayCard {
 
     @Override
     protected boolean canRide(){
-        return this.rides != 0;
+        return this.rides > 0;
     }
 
     @Override
-    public void ride() {
+    public void ride() throws CannotRideException {
         if (canRide()) {
             rides--;
         }
         else{
-            System.out.println("You can no longer viajar");
+            throw new CannotRideException("Nao nao");
         }
     }
 }
