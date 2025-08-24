@@ -1,4 +1,4 @@
-package TP1.ej2;
+package TPS.TP1.ej2;
 
 public class ComplexNumber {
     private int real;

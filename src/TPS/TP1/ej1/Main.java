@@ -1,4 +1,4 @@
-package TP1.ej1;
+package TPS.TP1.ej1;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package TP1.ej8;
+package TPS.TP1.ej8;
 
 public class Point {
     private double coordX, coordY;

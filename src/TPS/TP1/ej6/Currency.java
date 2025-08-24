@@ -1,4 +1,4 @@
-package TP1.ej6;
+package TPS.TP1.ej6;
 
 public class Currency {
     private String name;
