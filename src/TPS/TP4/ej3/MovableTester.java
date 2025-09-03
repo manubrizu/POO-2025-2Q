@@ -16,6 +16,9 @@ public class MovableTester {
         
         System.out.println("\n=== TESTING MOVABLE ELLIPSE ===");
         testMovableEllipse();
+        
+        System.out.println("\n=== TESTING DIAGONAL MOVEMENTS ===");
+        testDiagonalMovements();
     }
     
     private static void testMovablePoint() {
@@ -84,5 +87,47 @@ public class MovableTester {
         
         ellipse.moveSouth(2);
         System.out.println("After moveSouth(2): " + ellipse);
+    }
+    
+    private static void testDiagonalMovements() {
+        System.out.println("--- Testing MovablePoint diagonal movements ---");
+        MovablePoint point = new MovablePoint(10, 10);
+        System.out.println("Initial point: " + point);
+        
+        point.moveNorthEast(2, 3);
+        System.out.println("After moveNorthEast(2, 3): " + point);
+        
+        point.moveNorthWest(1, 1);
+        System.out.println("After moveNorthWest(1, 1): " + point);
+        
+        point.moveSouthEast(3, 2);
+        System.out.println("After moveSouthEast(3, 2): " + point);
+        
+        point.moveSouthWest(2, 1);
+        System.out.println("After moveSouthWest(2, 1): " + point);
+        
+        System.out.println("\n--- Testing MovableCircle diagonal movements ---");
+        MovablePoint center = new MovablePoint(5, 5);
+        MovableCircle circle = new MovableCircle(center, 3);
+        System.out.println("Initial circle: " + circle);
+        
+        circle.moveNorthEast(2, 2);
+        System.out.println("After moveNorthEast(2, 2): " + circle);
+        
+        circle.moveSouthWest(1, 3);
+        System.out.println("After moveSouthWest(1, 3): " + circle);
+        
+        System.out.println("\n--- Testing MovableTriangle diagonal movements ---");
+        MovablePoint t1 = new MovablePoint(0, 0);
+        MovablePoint t2 = new MovablePoint(2, 0);
+        MovablePoint t3 = new MovablePoint(1, 2);
+        MovableTriangle triangle = new MovableTriangle(t1, t2, t3);
+        System.out.println("Initial triangle: " + triangle);
+        
+        triangle.moveNorthWest(1, 2);
+        System.out.println("After moveNorthWest(1, 2): " + triangle);
+        
+        triangle.moveSouthEast(3, 1);
+        System.out.println("After moveSouthEast(3, 1): " + triangle);
     }
 }

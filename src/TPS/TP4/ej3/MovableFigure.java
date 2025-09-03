@@ -26,4 +26,28 @@ public interface MovableFigure extends Movable {
             movablePoint.moveEast(delta);
         }
     }
+    @Override
+    default void moveNorthEast(double deltaX, double deltaY) {
+        for(MovablePoint movablePoint : getPoints()) {
+            movablePoint.moveNorthEast(deltaX, deltaY);
+        }
+    }
+    @Override
+    default void moveNorthWest(double deltaX, double deltaY) {
+        for(MovablePoint movablePoint : getPoints()) {
+            movablePoint.moveNorthWest(deltaX, deltaY);
+        }
+    }
+    @Override
+    default void moveSouthEast(double deltaX, double deltaY) {
+        for(MovablePoint movablePoint : getPoints()) {
+            movablePoint.moveSouthEast(deltaX, deltaY);
+        }
+    }
+    @Override
+    default void moveSouthWest(double deltaX, double deltaY) {
+        for(MovablePoint movablePoint : getPoints()) {
+            movablePoint.moveSouthWest(deltaX, deltaY);
+        }
+    }
 }
