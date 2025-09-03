@@ -1,5 +1,7 @@
 package TALLER.taller4.catedra;
 
+import java.time.LocalTime;
+
 public class LastInFerryPort extends TimedFerryPort {
     private Ferry lastDocked;
     public LastInFerryPort(String name, FerryCompany fc, int docks, LocalTime o, LocalTime c) {
@@ -12,7 +14,7 @@ public class LastInFerryPort extends TimedFerryPort {
     }
     @Override
     public void undock(Ferry ferry, LocalTime localTime) {
-        if(lastDocked = ferry) {
+        if(lastDocked == ferry) {
             throw new RuntimeException();
         }
         super.undock(ferry, localTime);
