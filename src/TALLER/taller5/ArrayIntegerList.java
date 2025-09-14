@@ -1,6 +1,7 @@
 package TALLER.taller5;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 public class ArrayIntegerList implements List<Integer> {
     private final int BLOCK = 10;
@@ -54,5 +55,10 @@ public class ArrayIntegerList implements List<Integer> {
     @Override
     public boolean isEmpty(){
         return this.index == 0;
+    }
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return null;
     }
 }

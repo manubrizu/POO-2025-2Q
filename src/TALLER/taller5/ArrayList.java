@@ -1,7 +1,5 @@
 package TALLER.taller5;
 
-import CLASES.queue.QueueImpl;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -89,6 +87,6 @@ public class ArrayList<T> implements List<T>{
     public Iterator<T> customIterator(Comparator<T> comparator){
         T[] aux = Arrays.copyOf(array, size);
         Arrays.sort(aux, comparator);
-        return new ArrayListIterator(aux);
+        return new ArrayListIterator();
     }
 }

@@ -1,9 +1,9 @@
 package TALLER.taller4.catedra;
 
-public class Ferry {
+public class Ferry2 {
     private final String name;
     private final FerryCompany company;
-    public Ferry(String name, FerryCompany c) {
+    public Ferry2(String name, FerryCompany c) {
         this.name = name;
         this.company = c;
     }

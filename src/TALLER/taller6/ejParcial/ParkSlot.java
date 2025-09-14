@@ -18,6 +18,6 @@ public class ParkSlot {
 
     @Override
     public int hashCode(){
-
+        return 1;
     }
 }
