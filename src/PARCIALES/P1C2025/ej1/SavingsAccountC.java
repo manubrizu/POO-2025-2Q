@@ -19,13 +19,9 @@ public class SavingsAccountC extends SavingsAccountB{
 
     @Override
     public void interestPayment(int days){
-        for (int i = 0; i < days; i++){
-            if(saldo >= MAX_INTEREST){
-                this.saldo += MAX_INTEREST * INTEREST;
-            }
-            else {
-                this.saldo += this.saldo * INTEREST;
-            }
+        for (int i = 0; i < days; i++) {
+            double saldoParaInteres = Math.min(saldo, MAX_INTEREST);
+            this.saldo += saldoParaInteres * INTEREST;
         }
     }
 }
