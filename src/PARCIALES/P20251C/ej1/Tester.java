@@ -1,4 +1,4 @@
-package PARCIALES.P1C2025.ej1;
+package PARCIALES.P20251C.ej1;
 
 import java.time.Month;
 import java.time.MonthDay;

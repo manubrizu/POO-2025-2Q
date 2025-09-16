@@ -1,7 +1,6 @@
-package PARCIALES.P1C2025.ej2;
+package PARCIALES.P20251C.ej2;
 
 import java.time.LocalTime;
-import java.time.Month;
 
 public class Tester {
     public static void main(String[] args) {
