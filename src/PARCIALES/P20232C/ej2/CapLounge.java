@@ -3,7 +3,7 @@ package PARCIALES.P20232C.ej2;
 public class CapLounge extends Lounge {
     private final int maxPassengers;
 
-    public CapLounge(LoungeCentral central, String loungeName, int maxPassengers) {
+    CapLounge(LoungeCentral central, String loungeName, int maxPassengers) {
         super(central, loungeName);
         this.maxPassengers = maxPassengers;
     }

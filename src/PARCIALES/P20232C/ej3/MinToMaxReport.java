@@ -1,17 +1,15 @@
 package PARCIALES.P20232C.ej3;
 
-import TALLER.taller5.Comparator;
-
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class MinToMaxReport<R> implements ReportCollection<R>{
-    @SuppressWarnings("unchecked")
     private R[] vec;
     private int dim;
     private static int BLOCK = 10;
     private final Comparator<? super R> cmp;
 
-
+    @SuppressWarnings("unchecked")
     MinToMaxReport(Comparator<? super R> cmp){
         vec = (R[]) new Object[BLOCK];
         this.cmp = cmp;

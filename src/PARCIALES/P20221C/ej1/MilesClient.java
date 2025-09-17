@@ -1,4 +1,4 @@
-package PARCIALES.P20221C;
+package PARCIALES.P20221C.ej1;
 
 import java.util.Iterator;
 

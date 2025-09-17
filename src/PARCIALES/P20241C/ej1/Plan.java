@@ -32,6 +32,7 @@ public enum Plan {
     Plan(int maxCuotas) {
         this.maxCuotas = maxCuotas;
     }
+
     public boolean isValid(int cuotas) {
         return cuotas <= maxCuotas;
     }

@@ -43,8 +43,7 @@ public class ParkRide implements Iterable<ParkSlot>{
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            ParkSlot elem = slots[currentSlot];
-            currentSlot++;
+            ParkSlot elem = slots[currentSlot++];
             return elem;
         }
     }

@@ -8,7 +8,7 @@ public class Lounge {
     protected List<Passenger> passengers;
     protected LoungeCentral central;
 
-    public Lounge(LoungeCentral central, String loungeName) {
+    Lounge(LoungeCentral central, String loungeName) {
         this.central = central;
         this.loungeName = loungeName;
         this.passengers = new ArrayList<>();
