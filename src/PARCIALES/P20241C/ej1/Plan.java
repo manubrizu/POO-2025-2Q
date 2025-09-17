@@ -11,7 +11,7 @@ public enum Plan {
     VENTICUATRO_CUOTAS(24){
         @Override
         public double apply(double installmentAmount, int installment) {
-            if(installment == 3) {
+            if(installment <= 3) {
                 return 0;
             }
             return installmentAmount;
@@ -28,7 +28,6 @@ public enum Plan {
     };
 
     private int maxCuotas;
-    private int cuotasGratis;
 
     Plan(int maxCuotas) {
         this.maxCuotas = maxCuotas;
@@ -36,6 +35,7 @@ public enum Plan {
     public boolean isValid(int cuotas) {
         return cuotas <= maxCuotas;
     }
+
     public abstract double apply(double installmentAmount, int installment);
 
 
