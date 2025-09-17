@@ -15,9 +15,4 @@ public class ParkSlot {
     public String toString() {
         return String.format("%s <> %02d:%02d Slot", rideName, startTime.getHour(), startTime.getMinute());
     }
-
-    @Override
-    public int hashCode(){
-        return 1;
-    }
 }

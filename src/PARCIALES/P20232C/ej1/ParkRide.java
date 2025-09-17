@@ -7,22 +7,23 @@ import java.util.NoSuchElementException;
 public class ParkRide implements Iterable<ParkSlot>{
     private String parkName;
     private LocalTime openTime, closeTime;
-    private long size;
-    private ParkSlot[] slots;
+    private int espacio;
 
-    ParkRide(String name, LocalTime openTime, LocalTime closeTime, long minute) {
+    ParkRide(String name, LocalTime openTime, LocalTime closeTime, int espacio) {
+        if (espacio <= 0){
+            throw new IllegalArgumentException("Slot minutes must be positive");
+        }
         this.parkName = name;
         this.openTime = openTime;
-        this.closeTime = closeTime;
-        this.size = ((closeTime.toSecondOfDay() - openTime.toSecondOfDay()) / 60) / minute;
-        slots = new ParkSlot[(int) size];
+        this.espacio = espacio;
+        setCloseTime(closeTime);
     }
 
-    public void setCloseTime(LocalTime newCloseTime){
-        if (newCloseTime.isBefore(openTime)) {
-            throw new IllegalArgumentException("puto");
+    public void setCloseTime(LocalTime closeTime){
+        if (closeTime.isBefore(openTime)) {
+            throw new IllegalArgumentException("Close time cannot be before open time");
         }
-        this.closeTime = newCloseTime;
+        this.closeTime = closeTime;
     }
 
     @Override
@@ -31,11 +32,12 @@ public class ParkRide implements Iterable<ParkSlot>{
     }
 
     public class ParkSlotIterator implements Iterator<ParkSlot>{
-        private int currentSlot = 0;
-
+        private LocalTime currentTime = openTime;
+        private final LocalTime closeTimeIt = closeTime;    /// ESTO ES IMPORTANTE PORQUE EL CLOSE TIME DEL ITERATOR
+                                                            /// NO DEBE CAMBIAR SI SE CAMBIA EL "closeTime"
         @Override
         public boolean hasNext() {
-            return currentSlot < size;
+            return currentTime.isBefore(closeTimeIt);
         }
 
         @Override
@@ -43,8 +45,9 @@ public class ParkRide implements Iterable<ParkSlot>{
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
-            ParkSlot elem = slots[currentSlot++];
-            return elem;
+            ParkSlot aux = new ParkSlot(parkName, currentTime);
+            currentTime = currentTime.plusMinutes(espacio);
+            return aux;
         }
     }
 
