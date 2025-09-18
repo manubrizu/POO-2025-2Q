@@ -1,4 +1,4 @@
-package PARCIALES.P20241C.ej2;
+package PARCIALES.P20241C.ej3;
 
 public class Counter implements Comparable<Counter>{
     private int counterNumber;
@@ -24,10 +24,10 @@ public class Counter implements Comparable<Counter>{
     }
 
     @Override
-    public int compareTo(Counter o){
-        int cmp = this.airlineName.compareTo(o.airlineName);
+    public int compareTo(Counter c){
+        int cmp = this.airlineName.compareTo(c.airlineName);
         if(cmp == 0){
-            cmp = Integer.compare(this.counterNumber, o.counterNumber);
+            cmp = Integer.compare(this.counterNumber, c.counterNumber);
         }
         return cmp;
     }

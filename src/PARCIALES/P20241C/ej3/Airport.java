@@ -1,4 +1,4 @@
-package PARCIALES.P20241C.ej2;
+package PARCIALES.P20241C.ej3;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -31,18 +31,18 @@ public class Airport {
         }
     }
 
+    /// Predicate<Counter> idleAndStartsWithA = new Predicate<Counter>() {
+    ///     @Override
+    ///     public boolean test(Counter checkInCounter) {
+    ///         return !checkInCounter.isCheckIn() && checkInCounter.getAirline().startsWith("A");
+    ///     }
+    /// };
+
     private Counter[] orderCopy(Comparator<Counter> comparator) {
         Counter[] aux = Arrays.copyOf(vec, index);
         Arrays.sort(aux, comparator);
         return aux;
     }
-
-    /// Predicate<Counter> idleAndStartsWithA = new Predicate<Counter>() {
-    ///     @Override
-    ///     public boolean test(Counter checkInCounter) {
-    ///         return !checkInCounter.isCheckIn() & checkInCounter.getAirline().startsWith("A");
-    ///     }
-    /// };
 
     public Counter[] airlineOrderCounters() {
         return orderCopy(Comparator.naturalOrder());
