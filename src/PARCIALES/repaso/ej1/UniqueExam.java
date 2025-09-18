@@ -1,4 +1,4 @@
-package PARCIALES.repaso;
+package PARCIALES.repaso.ej1;
 
 public class UniqueExam extends Exam {
 

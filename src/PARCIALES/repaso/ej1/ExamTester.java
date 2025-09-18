@@ -1,4 +1,4 @@
-package PARCIALES.repaso;
+package PARCIALES.repaso.ej1;
 
 import java.util.Arrays;
 
