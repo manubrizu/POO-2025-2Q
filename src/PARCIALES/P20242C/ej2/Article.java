@@ -8,16 +8,16 @@ public class Article implements Comparable<Article> {
     public Article(FeedType feedType, String titulo) {
         this.feedType = feedType;
         this.titulo = titulo;
-        this.leido = true;
+        this.leido = false;
     }
     
     @Override
     public String toString() {
-        return "%s %s is %s".formatted(feedType, titulo, leido ? "unread" : "read");
+        return "%s %s is %s".formatted(feedType, titulo, leido ? "read" : "unread");
     }
 
     public void read() {
-        leido = false;
+        leido = true;
     }
     
     public FeedType getFeedType() {
@@ -25,14 +25,14 @@ public class Article implements Comparable<Article> {
     }
     
     public boolean isUnread() {
-        return leido;
+        return !leido;
     }
     
     @Override
-    public int compareTo(Article o) {
-        int cmp = feedType.compareTo(o.feedType);
+    public int compareTo(Article a) {               ///  ORDEN NATURAL
+        int cmp = feedType.compareTo(a.feedType);
         if(cmp == 0) {
-            cmp = titulo.compareTo(o.titulo);
+            cmp = titulo.compareTo(a.titulo);
         }
         return cmp;
     }

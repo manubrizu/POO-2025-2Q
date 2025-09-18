@@ -15,7 +15,7 @@ public class YearMonthRange implements Iterable<YearMonth> {
         this.salto = salto;
     }
 
-    YearMonthRange(YearMonth start, YearMonth end) {
+    YearMonthRange(YearMonth start, YearMonth end) {                                    ///  NO TENGO QUE REPETIR CODIGO, INCREMENTO DE A 1 MES POR DEFAULT
         this(start, end, yearMonth -> yearMonth.plusMonths(1));
     }
 
@@ -29,7 +29,7 @@ public class YearMonthRange implements Iterable<YearMonth> {
 
         @Override
         public boolean hasNext() {
-            return !current.isAfter(end);
+            return current.isBefore(end);
         }
 
         @Override
