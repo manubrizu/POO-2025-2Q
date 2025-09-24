@@ -45,7 +45,7 @@ public class ParallelIterator<T> implements Iterator<ParallelIterator.Pair<T>> {
 
         @Override
         public String toString() {
-            return String.format("{%s,%s}", left, right);
+            return "{%s,%s}".formatted(left, right);
         }
     }
 }

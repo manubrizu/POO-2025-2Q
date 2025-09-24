@@ -5,7 +5,6 @@ import java.util.NoSuchElementException;
 
 public class TVShow implements Iterable<TVEpisode> {
     private int seasons, episodes;
-    private int dim;
 
     TVShow(int seasons, int episodes){
         setSeasons(seasons);
@@ -32,7 +31,7 @@ public class TVShow implements Iterable<TVEpisode> {
 
     public class TVShowIterator implements Iterator<TVEpisode>{
         private int currentSeason = 1, currentEpisode = 1;
-        private int seasonsIt = TVShow.this.seasons, episodesIt = TVShow.this.episodes;
+        private int seasonsIt = seasons, episodesIt = episodes;
 
         @Override
         public boolean hasNext(){
