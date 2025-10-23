@@ -1,6 +1,5 @@
 package TPS.TP5.ej11;
 
-import TALLER.taller5.Comparator;
 
 public enum Continent{
     AFRICA("África", 1100, 30),
