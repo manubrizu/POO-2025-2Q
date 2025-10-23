@@ -17,17 +17,21 @@ public class ArrayList<T> implements List<T>{
         this.index = 0;
     }
 
+    public ArrayList() {
+    }
+
     private boolean canAdd(){
         return index < size;
     }
 
     @Override
-    public void add(T element){
+    public boolean add(T element){
         if(!canAdd()){
             this.array = Arrays.copyOf(this.array, size + BLOCK);
             this.size += BLOCK;
         }
         this.array[index++] = element;
+        return false;
     }
 
     @Override
