@@ -1,5 +1,7 @@
 package TPS.TP7.ej7;
 
+import java.util.Map;
+
 public class SortedMapTester {
     public static void main(String[] args) {
         SortedMap<MyComparableClass, String> sm = new SortedMapImpl<>();
