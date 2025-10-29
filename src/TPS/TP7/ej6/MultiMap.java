@@ -1,6 +1,6 @@
 package TPS.TP7.ej6;
 
-public interface MultiMap<K, V>{
+public interface MultiMap<K, V extends Comparable<? super V>>{
     /**
      * Agrega un par key,value al multimapa si el par no existe.
      */
