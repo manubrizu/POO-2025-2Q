@@ -1,5 +1,8 @@
 package PARCIALES.P2.repaso.ej3;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class FilteredKeyMapIteratorTester {
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
@@ -27,7 +30,4 @@ public class FilteredKeyMapIteratorTester {
         }
         mapIterator.next();
     }
-}
-
-
 }
