@@ -1,4 +1,4 @@
-package PARCIALES.P2.P220251C;
+package PARCIALES.P2.P220251C.ej2;
 
 public class SplitMapTester {
     public static void main(String[] args) {

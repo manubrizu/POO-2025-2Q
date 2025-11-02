@@ -1,4 +1,4 @@
-package PARCIALES.P2.P220251C;
+package PARCIALES.P2.P220251C.ej2;
 
 import java.util.HashMap;
 import java.util.Iterator;
